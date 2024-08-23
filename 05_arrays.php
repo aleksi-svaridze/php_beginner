@@ -1,144 +1,91 @@
 <?php
 
 // Create array
-$fruits = ['banana','apple','kiwi'];
+$fruitsName = ['banana', 'kiwi', 'apple', 'peach'];
 
-$vegetables = array('potato', 'tomato', 'watermelon');
+$vegetablesName = array('tomato', 'potato', 'melon');
 
 // Print the whole array
-echo '<pre>';
-var_dump($vegetables);
-echo '</pre>';
-
+print_r($vegetablesName);
 echo '<hr>';
-
 echo '<pre>';
-print_r($vegetables);
+print_r($fruitsName);
 echo '</pre>';
 echo '<hr>';
-
+echo '<pre>';
+var_dump($vegetablesName);
+echo '</pre>';
+echo '<hr>';
 // Get element by index
-echo $fruits[2];
+echo $fruitsName[0];
 echo '<hr>';
 // Set element by index
-$fruits[3] = 'peach';
-echo $fruits[3];
+$fruitsName[0] = 'new random fruit';
+print_r($fruitsName);
 echo '<hr>';
 
 // Check if array has element at index 2
-var_dump(isset($fruits[4]));
+var_dump(isset($fruitsName[6]));
 echo '<hr>';
 
 // Add element at the end of the array
-$fruits[] = 'mango';
-array_push($fruits, 'karalioki');
-echo '<pre>';
-var_dump($fruits);
-echo '</pre>';
+$fruitsName[] = 'grapes';
+array_push($fruitsName, 'watermalon');
+
+var_dump($fruitsName);
 echo '<hr>';
 
 // Remove element from the end of the array
-echo array_pop($fruits);
-
-echo '<pre>';
-var_dump($fruits);
-echo '</pre>';
-
+$removedElement = array_pop($fruitsName);
+echo $removedElement;
+echo '<hr>';
+var_dump($fruitsName);
 echo '<hr>';
 
 // Print the length of the array
-echo count($fruits);
-echo '<hr>';
-echo count($vegetables);
+$myArraysLength = count($fruitsName);
+echo $myArraysLength;
 echo '<hr>';
 
 // Add element at the beginning of the array
-array_unshift($fruits, 'melon');
-echo '<pre>';
-var_dump($fruits);
-echo '</pre>';
-
+array_unshift($fruitsName, 'qliavi');
 echo '<hr>';
+var_dump($fruitsName);
 // Remove element from the beginning of the array
-echo array_shift($fruits);
-
 echo '<hr>';
-
-echo '<pre>';
-var_dump($fruits);
-echo '</pre>';
+$removedItemFromTheBiginning = array_shift($fruitsName);
+echo $removedItemFromTheBiginning;
+echo '<hr>';
+var_dump($fruitsName);
 // Split the string into an array
 echo '<hr>';
-$string = 'me, you, she';
 
-$string2 = explode(',', $string);
-echo '<pre>';
-var_dump($string2);
-echo '</pre>';
 echo '<hr>';
 // Combine array elements into string
-echo implode('@',$string2);
 echo '<hr>';
 // Check if element exist in the array
-var_dump(in_array('apple', $fruits));
-var_dump(in_array('boo', $fruits));
 echo '<hr>';
 
 // Search element index in the array
-var_dump(array_search('boo', $fruits));
-var_dump(array_search('apple', $fruits));
 echo '<hr>';
 
 // Merge two arrays
 
-$allFruits = array_merge($fruits, $vegetables);
-$allFruits2 = [...$fruits, ...$allFruits];
-echo '<pre>';
-var_dump($allFruits);
-echo '</pre>';
-
 echo '<hr>';
 
-echo '<pre>';
-var_dump($allFruits2);
-echo '</pre>';
 
 echo '<hr/>';
 
 // Sorting of array (Reverse order also)
-sort($fruits);
-var_dump($fruits);
 echo '<hr>';
-
-rsort($fruits);
-var_dump($fruits);
 
 
 // filter method
-$numbers = [1,2,3,4,5,6,7,8,9];
-$evens = array_filter($numbers, fn($n) => $n % 2 === 0);
-
-$odds = array_filter($numbers, fn($odd) => $odd % 2 !== 0);
-echo '<pre>';
-var_dump($evens);
-echo '</pre>';
-echo '<hr>';
-echo '<pre>';
-var_dump($odds);
-echo '</pre>';
 
 echo '<hr>';
 // Map method
-$mappedArray = array_map(fn($n) => $n + 1, $numbers);
-
-echo '<pre>';
-var_dump($mappedArray);
-echo '</pre>';
 echo '<hr>';
 // Reduce method
-$sum = array_reduce($numbers, fn($carry, $n) => $carry + $n);
-
-echo $sum;
 echo '<hr>';
 
 // https://www.php.net/manual/en/ref.array.php
