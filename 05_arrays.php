@@ -64,17 +64,21 @@ $newArr = explode(',', $longString);
 var_dump($newArr);
 echo '<hr>';
 // Combine array elements into string
-$arrayToString = implode(' ',$newArr);
+$arrayToString = implode(' ', $newArr);
 echo $arrayToString;
 echo '<hr>';
+
 // Check if element exist in the array
+var_dump(in_array('apple', $fruitsName));
 echo '<hr>';
 
 // Search element index in the array
+echo array_search('apple', $fruitsName);
 echo '<hr>';
 
 // Merge two arrays
-
+$healthyFood = array_merge(['blaa', 'qlaa'], $vegetablesName);
+var_dump( $healthyFood);
 echo '<hr>';
 
 
