@@ -59,9 +59,13 @@ echo '<hr>';
 var_dump($fruitsName);
 // Split the string into an array
 echo '<hr>';
-
+$longString = 'I,love,you';
+$newArr = explode(',', $longString);
+var_dump($newArr);
 echo '<hr>';
 // Combine array elements into string
+$arrayToString = implode(' ',$newArr);
+echo $arrayToString;
 echo '<hr>';
 // Check if element exist in the array
 echo '<hr>';
