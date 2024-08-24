@@ -78,22 +78,39 @@ echo '<hr>';
 
 // Merge two arrays
 $healthyFood = array_merge(['blaa', 'qlaa'], $vegetablesName);
-var_dump( $healthyFood);
+$newArray = [...$fruitsName, ...$healthyFood];
+var_dump($newArray);
 echo '<hr>';
-
-
-echo '<hr/>';
 
 // Sorting of array (Reverse order also)
+sort($newArray);
+var_dump($newArray);
 echo '<hr>';
-
+rsort($newArray);
+var_dump($newArray);
+echo '<hr>';
 
 // filter method
+$numbers = [1,2,3,4,5,6,7,8,9];
+// $evens = array_filter($numbers, function($n){
+//     return $n % 2 === 0;
+// });
+// $odds = array_filter($numbers, function($n){
+//     return $n % 2 !== 0;
+// });
+$evens = array_filter($numbers, fn($n)=> $n % 2 === 0);
+$odds = array_filter($numbers, fn($n) => $n % 2 !== 0);
+var_dump($evens);
+echo '<hr>';
 
-echo '<hr>';
 // Map method
+$mappedArray = array_map(fn($n) => ++$n, $numbers);
+var_dump($mappedArray);
 echo '<hr>';
+
 // Reduce method
+$sum = array_reduce($numbers, fn($carry, $n) => $carry + $n);
+echo $sum;
 echo '<hr>';
 
 // https://www.php.net/manual/en/ref.array.php
