@@ -120,20 +120,58 @@ echo '<hr>';
 // ============================================
 
 // Create an associative array
+$alex = [
+    'name' => 'Alex',
+    'age' => 42,
+    'hobbies' => ['programing', 'kid care', 'breath fresh air']
+];
 
+var_dump($alex);
+echo '<hr />';
 // Get element by key
+echo $alex['name'];
+echo '<hr />';
 
 // Set element by key
-
+$alex['name'] = 'Aleksi';
+echo '<pre>';
+var_dump($alex);
+echo '</pre>';
 // Null coalescing assignment operator. Since PHP 7.4
 
 // Check if array has specific key
+echo '<hr/>';
+echo '<pre>';
+var_dump(isset($alex['ad']));
+echo '</pre>';
 
 // Print the keys of the array
+echo '<hr/>';
+echo '<pre>';
+var_dump(array_keys($alex));
+echo '</pre>';
 
 // Print the values of the array
+echo '<hr/>';
+echo '<pre>';
+var_dump(array_values($alex));
+echo '</pre>';
 
 // Sorting associative arrays by values, by keys
-
+ksort($alex);
+echo '<hr/>';
+echo '<pre>';
+var_dump($alex);
+echo '</pre>';
 
 // Two dimensional arrays
+
+$todos = [
+    ['title' => 'todo 1', 'completed' => true],
+    ['title' => 'todo 2', 'completed' => false]
+];
+
+echo '<hr/>';
+echo '<pre>';
+var_dump($todos);
+echo '</pre>';
